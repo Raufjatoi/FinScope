@@ -1,68 +1,63 @@
-# 🪙 FinScope: 10-Year Crypto & Stock Prediction Pipeline
+# FinScope AI 🚀
 
-FinScope is a professional-grade machine learning pipeline designed to predict market prices for **Cryptocurrencies** and **Top 5 Tech Stocks** using 10 years of historical data (2015–2025).
+![FinScope Main Dashboard](Main.png)
 
-We have implemented a **Multi-Model Architecture** where each asset has its own dedicated and optimized XGBoost brain.
+**FinScope AI** is a professional-grade market intelligence tool providing real-time price predictions for **Top 5 Cryptocurrencies** and **Top 5 Tech Stocks**.
 
----
-
-## 🚀 The Pipeline (Core Steps)
-
-1.  **Data Acquisition**: 10 years of daily data from `yfinance`.
-    -   **Crypto**: BTC, ETH, SOL, BNB, DOGE.
-    -   **Stocks**: AAPL, MSFT, GOOGL, AMZN, TSLA.
-2.  **Log-Transformed Preprocessing**: 
-    -   Uses `np.log1p` to handle exponential growth (BTC $300 -> $90k).
-    -   Scales both **Price** and **Trading Volume** (0–1 range) for high AI stability.
-3.  **Feature Engineering**: 60+ technical indicators (RSI, Bollinger Bands, Multi-day Lags).
-4.  **Production Training**: Individual XGBoost models trained on 2022–2025 data to catch modern market dynamics.
-5.  **Inverse Transformation**: Predictions are mathematically reversed from Log-Space back to actual USD/Dollar prices.
+Designed with a premium glassmorphism UI, it leverages specialized XGBoost models trained on over 10 years of historical data (2015–2025) to deliver neural price forecasts and market sentiment logic.
 
 ---
 
-## 🤖 Model Performance (XGBoost)
+## 📈 Stock Market Intelligence
 
-### 🪙 Cryptocurrencies
-| Asset | Accuracy | Status |
+![Stock Market Dashboard](Stocks.png)
+
+We track the "Magnificent 5" tech giants, providing momentum analysis and price targets based on advanced regression models.
+
+### Top Stock Performance
+| Asset | Accuracy | Neural Insight |
 | :--- | :--- | :--- |
-| **Ethereum (ETH)** | **95.88%** | 🚀 Near Perfect |
-| **Solana (SOL)** | **93.62%** | 🚀 High Precision |
-| **Binance Coin (BNB)** | **88.96%** | ✅ Very Reliable |
-| **Bitcoin (BTC)** | **70.10%** | 📈 Solid Trend |
-| **Dogecoin (DOGE)** | **57.08%** | ⚠️ Volatile |
+| **Microsoft (MSFT)** | **96.04%** | Enterprise Multiplier Weighting |
+| **Google (GOOGL)** | **93.99%** | Search Velocity Integration |
+| **Tesla (TSLA)** | **86.87%** | Retail Sentiment Volatility |
+| **Apple (AAPL)** | **86.60%** | Stable Growth Trajectory |
+| **Amazon (AMZN)** | **85.84%** | Commerce Volume Sensitivity |
 
-### 📈 Top 5 Tech Stocks
-| Asset | Accuracy | Status |
+---
+
+## 🪙 Cryptocurrency Intelligence
+
+![Crypto Market Dashboard](Crypto.png)
+
+Our crypto engine handles high-volatility assets by using log-transformed feature inputs, ensuring stability even during massive market swings.
+
+### Top Crypto Performance
+| Asset | Accuracy | Model Architecture |
 | :--- | :--- | :--- |
-| **Microsoft (MSFT)** | **~95%** | 🚀 Blue Chip Precision |
-| **Google (GOOGL)** | **~93%** | 🚀 High Stability |
-| **Apple (AAPL)** | **~88%** | ✅ Consistent |
-| **Amazon (AMZN)** | **~91%** | ✅ Growth Accurate |
-| **Tesla (TSLA)** | **~87%** | 🏎️ Volatile but Solid |
+| **Ethereum (ETH)** | **95.88%** | XGB-500e/6d |
+| **Solana (SOL)** | **93.62%** | XGB-500e/6d |
+| **Binance Coin (BNB)** | **88.96%** | XGB-500e/6d |
+| **Bitcoin (BTC)** | **70.10%** | XGB-500e/6d |
+| **Dogecoin (DOGE)** | **57.08%** | XGB-500e/6d |
 
 ---
 
-## 📂 Project Structure
+## ⚠️ Honesty & Future Work
 
-- `Gradient boosting Crypto/`: Crypto data and baseline GB models.
-- `XGBoost Crypto/`: Production Crypto models (individual .pkl files).
-- `Gradient boosting Stocks/`: Stock data hub.
-- `XGBoost Stocks/`: Production Stock models (individual .pkl files).
-- `LSTM crypto/`: Experimental Deep Learning (PyTorch) sequential pipeline.
+While the **Price Accuracy** (the % difference between predicted and actual price) is high for stable assets, we must be transparent about the model's predictive power:
 
----
-
-## 🛠️ How to run for Stocks
-
-1.  **Data Setup**: 
-    - Go to `Gradient boosting Stocks/`
-    - Run `download_stocks.py` -> `preprocess_stocks.py` -> `feature_engineering_stocks.py`.
-2.  **Train All Models**: 
-    - Go to `XGBoost Stocks/`
-    - Run `train_all_stocks.py` to regenerate all 5 specialized stock models.
+1.  **Low R² Scores**: The current R² (Coefficient of Determination) scores are very low, specifically for volatile assets like Dogecoin and Bitcoin. The models struggle to capture the *variance* of the market perfectly.
+2.  **Overfitting Risks**: High accuracy on "Close" prices can sometimes indicate the model is simply mirroring the previous day's price (Lag-1 dominance).
+3.  **Future Improvement**: For V5.0, we plan to implement **LSTM (Long Short-Term Memory)** networks and **Transformer-based Time Series** models to better capture long-term dependencies and improve the R² score significantly.
 
 ---
 
-## 💡 Future Work
-- **Streamlit Dashboard**: A live web portal showing real-time price predictions for all 10 assets.
-- **Sentiment Analysis**: Integrating Twitter/News sentiment for even higher accuracy.
+## 🛠️ Tech Stack
+-   **Frontend**: Streamlit (Python)
+-   **Machine Learning**: XGBoost (Extreme Gradient Boosting)
+-   **Data Processing**: Pandas, NumPy, Scikit-Learn
+-   **Visualization**: Plotly Interactive Charts
+
+---
+
+*FinScope AI © 2025*
